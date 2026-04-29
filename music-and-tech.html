@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music & Technology | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===================================================
+       MUSIC & TECHNOLOGY — PAGE OVERRIDES & NEW STYLES
+    =================================================== */
+
+    body { font-family: 'Manrope', 'Segoe UI', sans-serif; }
+
+    /* Reset main padding — sections control their own */
+    main.content-page { padding: 0; }
+    main.content-page h2 {
+      border-left: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    .music-hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 8rem 6% 4.5rem;
+    }
+
+    .music-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(229,9,20,0.2), transparent 24%),
+        radial-gradient(circle at 78% 16%, rgba(255,188,197,0.1), transparent 28%);
+      z-index: 1;
+    }
+
+    .music-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/music.jpg') center / cover no-repeat;
+      transform: scale(1.04);
+      filter: saturate(1.08) contrast(1.04) brightness(0.62);
+    }
+
+    .music-hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(100deg, rgba(4,7,11,0.9) 0%, rgba(4,7,11,0.56) 40%, rgba(4,7,11,0.24) 70%, rgba(4,7,11,0.75) 100%),
+        linear-gradient(180deg, rgba(4,7,11,0.1) 0%, rgba(4,7,11,0.72) 72%, #04070b 100%);
+    }
+
+    /* Equalizer bars along the bottom of the hero */
+    .eq-bars {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 130px;
+      padding: 0 1rem;
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .eq-bar {
+      flex: 1;
+      max-width: 14px;
+      background: linear-gradient(to top, #8d0814 0%, #e50914 52%, #ff6d7c 100%);
+      border-radius: 2px 2px 0 0;
+      animation: eqPulse var(--dur, 1s) ease-in-out infinite alternate;
+    }
+
+    @keyframes eqPulse {
+      from { height: 6%; }
+      to   { height: 100%; }
+    }
+
+    /* Spinning vinyl */
+    .vinyl-wrap {
+      position: absolute;
+      right: 7%;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .vinyl {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, #e50914 0%, #c0392b 12%, #111 13%, transparent 14%),
+        repeating-radial-gradient(circle at 50% 50%,
+          #0d0d0d 0px, #1a1a1a 2px, #111 4px, #0d0d0d 6px
+        );
+      animation: vinylSpin 7s linear infinite;
+      box-shadow:
+        0 0 0 8px rgba(229,9,20,0.08),
+        0 0 50px rgba(229,9,20,0.35),
+        0 0 100px rgba(229,9,20,0.15);
+      opacity: 0.85;
+    }
+
+    .vinyl::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 55px; height: 55px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #222 40%, #e50914 41%, #c0392b 55%, #111 56%);
+    }
+
+    /* Gleam/reflection on vinyl */
+    .vinyl::after {
+      content: '';
+      position: absolute;
+      top: 10%; left: 18%;
+      width: 28%; height: 22%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.08), transparent);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    @keyframes vinylSpin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* Hero content */
+    .music-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      padding: 0;
+      max-width: 760px;
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.35rem;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--gold));
+      box-shadow: 0 0 18px rgba(229,9,20,0.65);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0; }
+    }
+
+    .music-hero-content h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      line-height: 0.92;
+      color: var(--text);
+      letter-spacing: -0.06em;
+      text-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      margin-bottom: 1.15rem;
+    }
+
+    .music-hero-content h1 .red-line {
+      color: transparent;
+      display: block;
+      background: linear-gradient(135deg, #fff1f3 0%, var(--gold) 18%, var(--red) 72%, #ff4d63 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .music-hero-content .hero-sub {
+      font-size: 1.02rem;
+      color: var(--muted);
+      font-weight: 400;
+      line-height: 1.75;
+      max-width: 44ch;
+      margin: 0 0 2.2rem;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .btn-red {
+      background: linear-gradient(135deg, var(--red), #ff4d63);
+      color: #140904;
+      padding: 0.95rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border: 1px solid rgba(255,188,197,0.3);
+      box-shadow: 0 18px 36px rgba(229,9,20,0.2);
+    }
+    .btn-red:hover {
+      transform: translateY(-2px);
+      color: #fff8ef;
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,188,197,0.44);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      padding: 0.95rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: all 0.3s;
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,188,197,0.34);
+      color: var(--gold);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ─── SECTION SHARED ────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .display-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.35rem, 5vw, 4.5rem);
+      color: var(--text);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .glow-red { color: #e50914; }
+
+    .section-center { text-align: center; margin-bottom: 4rem; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── INTRO ─────────────────────────────────────── */
+    .intro-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 7rem 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .intro-text .section-label { display: block; }
+
+    .intro-text p {
+      color: var(--muted-soft);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-top: 1.5rem;
+    }
+
+    .pull-quote {
+      border-left: 3px solid #e50914;
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      background: rgba(229,9,20,0.04);
+      border-radius: 0 10px 10px 0;
+    }
+    .pull-quote p {
+      font-size: 1.15rem !important;
+      color: rgba(255,255,255,0.9) !important;
+      font-style: italic;
+      margin: 0 !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Waveform animation */
+    .waveform-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      height: 260px;
+      background: rgba(229,9,20,0.03);
+      border: 1px solid rgba(229,9,20,0.1);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+    }
+
+    .w-bar {
+      width: 5px;
+      border-radius: 3px;
+      background: linear-gradient(to top, #8d0814, #e50914, #ff6d7c);
+      animation: wavePulse var(--wd, 1s) ease-in-out infinite alternate;
+    }
+
+    @keyframes wavePulse {
+      from { height: 6px; opacity: 0.4; }
+      to   { height: var(--wh, 60px); opacity: 1; }
+    }
+
+    /* ─── TIMELINE ──────────────────────────────────── */
+    .timeline-section {
+      padding: 6rem 5%;
+      background: linear-gradient(180deg, #000 0%, #080808 50%, #000 100%);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent,
+        rgba(229,9,20,0.6) 10%,
+        rgba(229,9,20,0.6) 90%,
+        transparent
+      );
+      transform: translateX(-50%);
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+      gap: 1.2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .tl-item .tl-left  { text-align: right; }
+    .tl-item .tl-right { text-align: left; }
+    .tl-item .tl-blank { }
+
+    .tl-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tl-dot {
+      width: 64px; height: 64px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(17,23,34,0.95), rgba(7,10,15,0.92));
+      border: 1px solid rgba(255,188,197,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffe8ca;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      flex-shrink: 0;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .tl-item:hover .tl-dot {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.42), 0 0 0 1px rgba(229,9,20,0.2);
+    }
+
+    .tl-year {
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
+
+    .tl-card {
+      background: linear-gradient(180deg, rgba(15,20,30,0.82), rgba(8,10,15,0.9));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      transition: all 0.35s ease;
+    }
+    .tl-card:hover {
+      background: linear-gradient(180deg, rgba(19,25,36,0.92), rgba(9,11,17,0.95));
+      border-color: rgba(229,9,20,0.22);
+      transform: translateY(-3px);
+    }
+
+    .tl-tag {
+      display: inline-block;
+      font-size: 0.67rem;
+      padding: 0.22rem 0.75rem;
+      background: rgba(229,9,20,0.12);
+      color: var(--gold);
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .tl-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .tl-card p { font-size: 0.875rem; color: var(--muted-soft); line-height: 1.7; }
+
+    /* ─── STATS ─────────────────────────────────────── */
+    .stats-section {
+      background: linear-gradient(135deg, #bf0a1d 0%, #7a0717 48%, #f13d52 100%);
+      padding: 5rem 5%;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 1rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      color: #fff7ee;
+      line-height: 0.95;
+      display: block;
+      letter-spacing: -0.06em;
+    }
+
+    .stat-suffix {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: rgba(255,247,238,0.72);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── INNOVATION CARDS ──────────────────────────── */
+    .cards-section {
+      padding: 7rem 5%;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .music-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 440px;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.45s cubic-bezier(0.175,0.885,0.32,1.275),
+                  box-shadow 0.45s ease;
+    }
+
+    .music-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 35px 70px rgba(0,0,0,0.34), 0 0 0 1px rgba(229,9,20,0.18);
+    }
+
+    .music-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.65s ease;
+      display: block;
+    }
+    .music-card:hover img { transform: scale(1.12); }
+
+    .card-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.96) 0%,
+        rgba(0,0,0,0.45) 50%,
+        rgba(0,0,0,0.05) 100%
+      );
+    }
+
+    .card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem 1.8rem;
+      transform: translateY(14px);
+      transition: transform 0.4s ease;
+    }
+    .music-card:hover .card-body { transform: translateY(0); }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, rgba(229,9,20,0.18), rgba(255,188,197,0.12));
+      border: 1px solid rgba(255,188,197,0.28);
+      color: #ffe4e8;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .card-body h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .card-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.4s ease 0.08s;
+    }
+    .music-card:hover .card-body p { opacity: 1; }
+
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.4s ease 0.12s, gap 0.3s ease;
+    }
+    .music-card:hover .card-cta { opacity: 1; }
+    .card-cta:hover { gap: 0.8rem; }
+
+    /* ─── QUOTE ─────────────────────────────────────── */
+    .quote-section {
+      position: relative;
+      padding: 9rem 5%;
+      text-align: center;
+      background: url('images/music.jpg') center / cover no-repeat fixed;
+    }
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,9,13,0.74), rgba(4,7,11,0.92));
+    }
+
+    .quote-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .big-quote-mark {
+      font-family: 'Syne', sans-serif;
+      font-size: 9rem;
+      line-height: 0.4;
+      color: var(--gold);
+      opacity: 0.35;
+      display: block;
+      user-select: none;
+    }
+
+    .quote-text {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4.4vw, 3.3rem);
+      color: var(--text);
+      line-height: 1.1;
+      margin: 1.5rem 0 2rem;
+      letter-spacing: -0.05em;
+    }
+
+    .quote-attr {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    /* ─── STREAMING ─────────────────────────────────── */
+    .streaming-section {
+      padding: 7rem 5%;
+      background: #080808;
+    }
+
+    .streaming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .streaming-text p {
+      color: var(--muted-soft);
+      line-height: 1.85;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .feat-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .feat-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .feat-list li:last-child { border-bottom: none; }
+
+    .feat-icon {
+      width: 2.35rem; height: 2.35rem;
+      border-radius: 0.9rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #ffe8ca;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* Fake Player UI */
+    .player-ui {
+      background: #111;
+      border-radius: 22px;
+      padding: 2.2rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow:
+        0 50px 90px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    .player-album {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.6rem;
+      position: relative;
+    }
+    .player-album img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .player-ui:hover .player-album img { transform: scale(1.04); }
+    .player-album-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.45), transparent 50%);
+    }
+
+    .player-meta { margin-bottom: 1.6rem; }
+    .player-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .player-artist { font-size: 0.82rem; color: #555; }
+
+    .player-progress-wrap {
+      height: 4px;
+      background: #1e1e1e;
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .player-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #b70717, #ff4d63);
+      border-radius: 2px;
+      animation: playing 18s linear infinite;
+    }
+    @keyframes playing { from { width: 0; } to { width: 100%; } }
+
+    .player-time {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #444;
+      margin-bottom: 1.6rem;
+    }
+
+    .player-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ctrl {
+      background: none;
+      border: none;
+      color: #444;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.25s, transform 0.2s;
+      padding: 0.2rem;
+    }
+    .ctrl:hover { color: #fff; transform: scale(1.15); }
+
+    .ctrl-play {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: #e50914;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      box-shadow: 0 0 25px rgba(229,9,20,0.45);
+    }
+    .ctrl-play:hover {
+      background: #f40612;
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(229,9,20,0.65);
+    }
+
+    /* Mini EQ inside player */
+    .mini-eq {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+      justify-content: center;
+    }
+    .mini-eq-bar {
+      width: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to top, #b70717, #ff4d63);
+      animation: eqPulse var(--dur, 0.6s) ease-in-out infinite alternate;
+    }
+
+    /* ─── PAGE-END NAV ──────────────────────────────── */
+    .page-end-nav {
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 900px) {
+      .intro-section   { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 6%; }
+      .streaming-grid  { grid-template-columns: 1fr; gap: 3rem; }
+      .cards-grid      { grid-template-columns: 1fr; }
+      .music-card      { height: 320px; }
+      .stats-inner     { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .stat-item       { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; }
+      .stat-item:last-child, .stat-item:nth-child(2n) { border-right: none; }
+      .vinyl-wrap      { display: none; }
+      .music-hero      { min-height: 640px; padding: 7rem 6% 4rem; }
+      .music-hero-content { max-width: 100%; }
+
+      /* Mobile timeline — single column */
+      .timeline::before { left: 26px; }
+      .tl-item {
+        grid-template-columns: 54px 1fr;
+        grid-template-areas: "center card";
+        gap: 1rem;
+      }
+      .tl-item .tl-left  { grid-area: card; text-align: left; }
+      .tl-item .tl-right { grid-area: card; text-align: left; }
+      .tl-item .tl-center { grid-area: center; }
+      .tl-item .tl-blank  { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+      .music-hero-content { padding: 0; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="music-hero">
+    <div class="music-hero-bg"></div>
+    <div class="music-hero-overlay"></div>
+
+    <div class="eq-bars" id="eqBars"></div>
+
+    <div class="vinyl-wrap">
+      <div class="vinyl"></div>
+    </div>
+
+    <div class="music-hero-content">
+      <span class="hero-eyebrow">EvoStream · Chapter VI</span>
+      <h1>Music &amp;<span class="red-line">Technology</span></h1>
+      <p class="hero-sub">From the first groove cut into shellac to AI-generated playlists — a century of sound, powered by innovation.</p>
+      <div class="hero-cta-group">
+        <a href="#timeline" class="btn-red">Explore the Timeline</a>
+        <a href="#innovation" class="btn-outline">See Innovations</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="content-page">
+
+    <!-- ═══════════ INTRO ═══════════ -->
+    <section class="intro-section">
+
+      <div class="intro-text reveal">
+        <span class="section-label">The Big Picture</span>
+        <h2 class="display-heading">How Tech <span class="glow-red">Rewired</span> Sound</h2>
+        <p>
+          Music has always been technology's most faithful companion. Every engineering leap — from mechanical cylinders
+          to magnetic tape, from transistor radios to fibre-optic networks — was seized by musicians and listeners
+          hungry for the next sonic frontier.
+        </p>
+        <div class="pull-quote">
+          <p>"Without music, life would be a mistake." — Friedrich Nietzsche</p>
+        </div>
+        <p>
+          The digital audio workstation democratised music production. Today, a teenager with a laptop can craft a
+          track indistinguishable from a major-label release — and push it to 600 million streaming listeners overnight.
+          The barrier between creator and audience has never been thinner.
+        </p>
+      </div>
+
+      <div class="waveform-wrap reveal" id="waveform"></div>
+
+    </section>
+
+
+    <!-- ═══════════ TIMELINE ═══════════ -->
+    <section class="timeline-section" id="timeline">
+      <div class="section-center reveal">
+        <span class="section-label">Chronology</span>
+        <h2 class="display-heading">A Century of <span class="glow-red">Sound</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- 1 — Left -->
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Analog</span>
+              <h3>Phonograph &amp; Vinyl</h3>
+              <p>Edison's 1877 invention changed everything. By the 1950s, 12-inch LPs gave listeners a full album experience with rich, warm analog fidelity that digital still struggles to replicate.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">VIN</div>
+            <span class="tl-year">1877 – 1950s</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <!-- 2 — Right -->
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">RAD</div>
+            <span class="tl-year">1920s – 1960s</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Broadcast</span>
+              <h3>Radio &amp; Magnetic Tape</h3>
+              <p>Radio brought music into every home for free. Magnetic tape let artists edit and overdub for the first time — enabling multi-track production and the polished studio sound we still use today.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 — Left -->
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Portable</span>
+              <h3>Cassette &amp; The Walkman</h3>
+              <p>Sony's 1979 Walkman was a cultural earthquake. For the first time people carried personal soundtracks everywhere they went. Mixtapes became love letters, protest anthems, and declarations of identity.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">TAPE</div>
+            <span class="tl-year">1963 – 1980s</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <!-- 4 — Right -->
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">CD</div>
+            <span class="tl-year">1982 – 2000s</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Digital</span>
+              <h3>CD &amp; Digital Audio</h3>
+              <p>The Compact Disc brought crystal-clear digital audio to the masses. CD sales peaked in the late 1990s — then Napster arrived and shattered the industry's business model in a single summer.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 — Left -->
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Download</span>
+              <h3>MP3 &amp; iTunes Era</h3>
+              <p>MP3 compression made music files small enough to share online. Apple's iPod and iTunes Store ($0.99 per song) rebuilt the music economy around individual tracks rather than albums.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">MP3</div>
+            <span class="tl-year">1993 – 2010s</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <!-- 6 — Right -->
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">AI</div>
+            <span class="tl-year">2008 – Present</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Streaming &amp; AI</span>
+              <h3>Spotify, Algorithms &amp; AI Composers</h3>
+              <p>Streaming eliminated ownership. Algorithms now curate your taste better than any DJ. AI tools like Suno and Udio are letting anyone generate full tracks — redefining what it means to be a musician.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════ STATS ═══════════ -->
+    <section class="stats-section">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <span class="stat-num"><span data-count="600">0</span><span class="stat-suffix">M+</span></span>
+          <p class="stat-label">Spotify monthly active listeners worldwide</p>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num"><span data-count="100">0</span><span class="stat-suffix">M+</span></span>
+          <p class="stat-label">Songs available on streaming platforms today</p>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num"><span data-count="1877">0</span></span>
+          <p class="stat-label">Year Edison invented the phonograph</p>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num"><span data-count="84">0</span><span class="stat-suffix">%</span></span>
+          <p class="stat-label">Of US music revenue now comes from streaming</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ INNOVATION CARDS ═══════════ -->
+    <section class="cards-section" id="innovation">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore <span class="glow-red">Music Innovation</span></h2>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="music-card reveal">
+          <img src="images/music1.jpg" alt="Vintage recording equipment">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">ANLG</span>
+            <h3>The Vintage Era</h3>
+            <p>Mechanical sound machines, horn gramophones, and shellac cylinders — the ancestors of every speaker, studio, and streaming app that followed.</p>
+            <a href="https://www.volocars.com/blog/history-of-music-machines" target="_blank" class="card-cta">Explore &rarr;</a>
+          </div>
+        </div>
+
+        <div class="music-card reveal">
+          <img src="images/music2.jpg" alt="Studio recording setup">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">STU</span>
+            <h3>Recording Revolution</h3>
+            <p>From condenser microphones and reel-to-reel tape to Pro Tools and Ableton — how we captured, layered, and sculpted sound in the studio.</p>
+            <a href="https://en.wikipedia.org/wiki/History_of_sound_recording" target="_blank" class="card-cta">Explore &rarr;</a>
+          </div>
+        </div>
+
+        <div class="music-card reveal">
+          <img src="images/music3.jpg" alt="Digital music streaming">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">DISC</span>
+            <h3>Digital Discovery</h3>
+            <p>Streaming platforms and AI-driven recommendation engines fundamentally changed how we find, share, and fall in love with music every single day.</p>
+            <a href="https://medium.com/@filipe.batista/the-evolution-of-music-discovery-from-mixtapes-to-algorithms-after-a-long-silence-im-back-to-85a2a1c03280" target="_blank" class="card-cta">Explore &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════ QUOTE ═══════════ -->
+    <section class="quote-section">
+      <div class="quote-inner reveal">
+        <span class="big-quote-mark">"</span>
+        <p class="quote-text">Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.</p>
+        <span class="quote-attr">— Plato</span>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ STREAMING ═══════════ -->
+    <section class="streaming-section">
+      <div class="streaming-grid">
+
+        <div class="streaming-text reveal">
+          <span class="section-label">The Now</span>
+          <h2 class="display-heading">The <span class="glow-red">Streaming</span> Revolution</h2>
+          <p>
+            In 2023, streaming accounted for over 84 % of all recorded music revenue in the United States. The shift
+            from owning music to accessing it has reshaped how artists are paid, how albums are sequenced, and how
+            listeners relate to sound.
+          </p>
+          <p>
+            Algorithms know your mood before you do. Playlists like Discover Weekly have replaced the radio DJ, while
+            AI composition tools are beginning to challenge what it means to be a musician at all.
+          </p>
+          <ul class="feat-list">
+            <li>
+              <span class="feat-icon">AI</span>
+              Personalised AI recommendations built from billions of listening signals
+            </li>
+            <li>
+              <span class="feat-icon">ROY</span>
+              Artists earn per-stream royalties — a fundamentally new revenue model
+            </li>
+            <li>
+              <span class="feat-icon">3D</span>
+              Spatial audio and lossless formats redefine listening fidelity
+            </li>
+            <li>
+              <span class="feat-icon">GEN</span>
+              AI-generated music is now commercially indistinguishable in many genres
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fake streaming player -->
+        <div class="player-ui reveal">
+          <div class="player-album">
+            <img src="images/music3.jpg" alt="Album Art">
+            <div class="player-album-grad"></div>
+          </div>
+          <div class="player-meta">
+            <div class="player-title">Digital Frontiers</div>
+            <div class="player-artist">EvoStream · Music &amp; Technology</div>
+          </div>
+          <div class="player-progress-wrap">
+            <div class="player-bar"></div>
+          </div>
+          <div class="player-time">
+            <span id="playerCurrent">0:00</span>
+            <span>3:58</span>
+          </div>
+          <div class="player-controls">
+            <button class="ctrl" title="Previous">⏮</button>
+            <button class="ctrl" title="Rewind">⏪</button>
+            <button class="ctrl-play" id="playBtn" title="Play">▶</button>
+            <button class="ctrl" title="Fast forward">⏩</button>
+            <button class="ctrl" title="Next">⏭</button>
+          </div>
+          <div class="mini-eq" id="miniEq"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════ PAGE NAV ═══════════ -->
+    <div class="page-end-nav">
+      <a href="digital-era.html"             class="btn-outline">&larr; Digital Era</a>
+      <a href="index.html"                   class="btn-red">Home</a>
+      <a href="future-of-entertainment.html" class="btn-outline">Future of Entertainment &rarr;</a>
+    </div>
+
+  </main>
+
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    /* ── Equalizer bars in hero ── */
+    const eqBars = document.getElementById('eqBars');
+    for (let i = 0; i < 90; i++) {
+      const b = document.createElement('div');
+      b.className = 'eq-bar';
+      b.style.setProperty('--dur', (Math.random() * 0.9 + 0.35) + 's');
+      eqBars.appendChild(b);
+    }
+
+    /* ── Waveform visualiser ── */
+    const wf = document.getElementById('waveform');
+    const wfHeights = [
+      18,30,50,70,95,120,95,70,50,30,18,10,
+      22,42,65,88,115,88,65,42,22,12,
+      25,48,72,100,72,48,25,14,
+      20,40,62,85,108,85,62,40,20,10,
+      28,55,80,110,80,55,28,16,
+      18,35,58,78,100,78,58,35,18
+    ];
+    wfHeights.forEach(h => {
+      const b = document.createElement('div');
+      b.className = 'w-bar';
+      b.style.setProperty('--wh', h + 'px');
+      b.style.setProperty('--wd', (Math.random() * 1.4 + 0.35) + 's');
+      wf.appendChild(b);
+    });
+
+    /* ── Mini EQ in player ── */
+    const mEq = document.getElementById('miniEq');
+    for (let i = 0; i < 22; i++) {
+      const b = document.createElement('div');
+      b.className = 'mini-eq-bar';
+      b.style.setProperty('--dur', (Math.random() * 0.5 + 0.25) + 's');
+      b.style.height = (Math.random() * 16 + 4) + 'px';
+      mEq.appendChild(b);
+    }
+
+    /* ── Scroll-reveal (IntersectionObserver) ── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = '0s'; // reset; stagger via JS below
+      revealObs.observe(el);
+    });
+
+    /* Stagger siblings in timeline and cards grids */
+    document.querySelectorAll('.tl-item').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.1) + 's';
+    });
+    document.querySelectorAll('.music-card').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.15) + 's';
+    });
+    document.querySelectorAll('.stat-item').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.1) + 's';
+    });
+
+    /* ── Counter animation ── */
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el      = entry.target;
+        const target  = parseInt(el.dataset.count, 10);
+        const dur     = target > 1000 ? 2200 : 1400;
+        const start   = performance.now();
+        const tick = now => {
+          const progress = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target).toLocaleString();
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toLocaleString();
+        };
+        requestAnimationFrame(tick);
+        countObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+    /* ── Player clock ── */
+    let playerSec = 0;
+    const playerClock = document.getElementById('playerCurrent');
+    const playBtn     = document.getElementById('playBtn');
+    let playing       = true;
+    let clockTimer    = setInterval(tick, 1000);
+
+    function tick() {
+      playerSec = (playerSec + 1) % 238;
+      const m = Math.floor(playerSec / 60);
+      const s = playerSec % 60;
+      playerClock.textContent = m + ':' + String(s).padStart(2, '0');
+    }
+
+    playBtn.addEventListener('click', () => {
+      playing = !playing;
+      playBtn.textContent = playing ? '▶' : '⏸';
+      if (playing) {
+        clockTimer = setInterval(tick, 1000);
+        document.querySelectorAll('.mini-eq-bar, .player-bar').forEach(b => b.style.animationPlayState = 'running');
+      } else {
+        clearInterval(clockTimer);
+        document.querySelectorAll('.mini-eq-bar, .player-bar').forEach(b => b.style.animationPlayState = 'paused');
+      }
+    });
+
+    /* ── Smooth scroll for anchor links ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const tgt = document.querySelector(a.getAttribute('href'));
+        if (tgt) { e.preventDefault(); tgt.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    /* ── Subtle parallax on vinyl ── */
+    const vinylWrap = document.querySelector('.vinyl-wrap');
+    if (vinylWrap) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        vinylWrap.style.transform = `translateY(calc(-50% + ${y * 0.12}px))`;
+        vinylWrap.style.opacity   = Math.max(0, 1 - y / 600);
+      }, { passive: true });
+    }
+
+    /* ── Header glass effect on scroll ── */
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      header.style.backdropFilter = window.scrollY > 40 ? 'blur(14px)' : 'none';
+      header.style.background = window.scrollY > 40
+        ? 'rgba(0,0,0,0.92)'
+        : 'rgba(0,0,0,0.85)';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

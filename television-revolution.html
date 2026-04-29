@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Television Revolution | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* CRT scan lines over the hero */
+    .scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.08) 3px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Decade showcase (replaces boring table) */
+    .decade-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+    }
+    .decade-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .decade-card:hover {
+      background: rgba(229,9,20,0.06);
+      border-color: rgba(229,9,20,0.3);
+      transform: translateY(-4px);
+    }
+    .decade-year {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      color: var(--red);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .decade-show {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .decade-note {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 960px) {
+      .decade-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .decade-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/tv.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="scanlines"></div>
+    <div id="heroParticles"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter III</span>
+      <h1 class="hero-title">
+        The Television
+        <span class="red-line">Revolution</span>
+      </h1>
+      <p class="hero-sub">The box that brought the world into the living room — connecting billions through news, drama, sport, and the defining shared moments of the 20th century.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">Explore TV History</a>
+        <a href="cinema-age.html" class="btn-outline">← Cinema Age</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">The Era of Broadcast</span>
+        <h2 class="display-heading">Culture Delivered<br><span class="glow-red">Into Every Home</span></h2>
+        <p>The 1950s marked the rise of television as a household staple. Families gathered nightly around the glow of a cathode ray tube — watching variety shows, news bulletins, and sitcoms that became shared national memories.</p>
+        <div class="pull-quote">
+          <p>"Television has made dictatorship impossible, but democracy unbearable." — Shimon Peres</p>
+        </div>
+        <p>Networks became the new stage. Iconic moments — the moon landing, Kennedy's assassination, Mandela walking free — demonstrated television's unique power to unite humanity in a single, simultaneous emotional experience.</p>
+        <ul class="feat-list">
+          <li><span class="feat-icon">CRT</span> Black-and-white broadcasts evolved into vibrant colour by the 1960s</li>
+          <li><span class="feat-icon">SAT</span> Satellite TV connected global audiences to live events worldwide</li>
+          <li><span class="feat-icon">CBL</span> Cable channels fractured mass audiences into niche communities</li>
+        </ul>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/family-tv.jpg" alt="Family watching television">
+        <span class="intro-badge">Since 1926</span>
+      </div>
+    </section>
+
+
+    <!-- DECADE SHOWCASE -->
+    <section class="s-dark">
+      <div class="section-center reveal">
+        <span class="section-label">By Decade</span>
+        <h2 class="display-heading">Defining Shows of <span class="glow-red">Every Era</span></h2>
+      </div>
+      <div class="decade-grid">
+        <div class="decade-card reveal">
+          <span class="decade-year">1950s</span>
+          <p class="decade-show">I Love Lucy</p>
+          <p class="decade-note">The sitcom format was born — 60 million viewers tuned in each week.</p>
+        </div>
+        <div class="decade-card reveal">
+          <span class="decade-year">1970s</span>
+          <p class="decade-show">All in the Family</p>
+          <p class="decade-note">Television tackled race, class, and politics for the first time.</p>
+        </div>
+        <div class="decade-card reveal">
+          <span class="decade-year">1990s</span>
+          <p class="decade-show">Friends</p>
+          <p class="decade-note">Must-see TV reached peak cultural saturation — 52M viewers for the finale.</p>
+        </div>
+        <div class="decade-card reveal">
+          <span class="decade-year">2010s</span>
+          <p class="decade-show">Streaming Series</p>
+          <p class="decade-note">Netflix, HBO, and Amazon redefined TV as prestige cinema — no broadcast needed.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore the <span class="glow-red">TV Revolution</span></h2>
+      </div>
+      <div class="cards-grid-3">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/vintage-tv.jpg" alt="Vintage television">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">CRT</span>
+            <h3>Birth of British Television</h3>
+            <p>How television first took off in the UK — from mechanical Baird systems to the dawn of electronic broadcasting.</p>
+            <a href="https://blog.scienceandmediamuseum.org.uk/history-of-british-television-timeline/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/family-tv.jpg" alt="Family watching TV in colour">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">COL</span>
+            <h3>The Colour Revolution</h3>
+            <p>How colour broadcasting reshaped entertainment — turning simple shows into vivid shared experiences that defined a generation.</p>
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/history-colour-tv-uk" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/tv-global.jpg" alt="Television and society">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">GLB</span>
+            <h3>Television and Society</h3>
+            <p>How the spread of TV shaped culture, politics, and family life across the globe through shared visual storytelling.</p>
+            <a href="https://www.britannica.com/topic/television-technology/The-impact-of-television-on-society" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/tv.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">Television is the menace that everyone loves to hate but can't seem to live without.</p>
+        <span class="quote-attr">— Paddy Chayefsky</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="cinema-age.html" class="btn-outline">← Cinema Age</a>
+      <a href="index.html" class="btn-outline">Home</a>
+      <a href="gaming-evolution.html" class="btn-red">Gaming Evolution →</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 16; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 4 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*9+6}s;--dl:-${Math.random()*18}s;opacity:${Math.random()*0.35+0.15}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.decade-card.reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    document.querySelectorAll('.cards-grid-3 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

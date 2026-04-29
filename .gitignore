@@ -1,0 +1,6 @@
+.vercel/
+node_modules/
+.env
+.env.*
+Thumbs.db
+.DS_Store

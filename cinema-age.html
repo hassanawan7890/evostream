@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cinema Age | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Film strip scrolling across the hero bottom */
+    .film-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      animation: filmScroll 18s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .film-frame {
+      flex-shrink: 0;
+      width: 60px;
+      height: 44px;
+      border: 2px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      margin: 0 4px;
+      background: rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .film-frame::before,
+    .film-frame::after {
+      content: '';
+      position: absolute;
+      left: 4px; right: 4px;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 1px;
+    }
+    .film-frame::before { top: -10px; }
+    .film-frame::after  { bottom: -10px; }
+
+    @keyframes filmScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/cinema.jpg');"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Scrolling film strip -->
+    <div class="film-strip" id="filmStrip"></div>
+
+    <div id="heroParticles"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter II</span>
+      <h1 class="hero-title">
+        The Birth of
+        <span class="red-line">Cinema</span>
+      </h1>
+      <p class="hero-sub">Where imagination met light — and stories began to move. From a Paris basement in 1895 to billion-dollar blockbusters spanning digital galaxies.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">Discover Cinema</a>
+        <a href="early-entertainment.html" class="btn-outline">← Early Entertainment</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">The Golden Dawn</span>
+        <h2 class="display-heading">Moving Images<br><span class="glow-red">Changed Everything</span></h2>
+        <p>In 1895, the Lumière brothers projected moving images onto a screen in a Paris café — and the audience reportedly fled in terror, convinced the train on screen was real. That moment of pure wonder launched the most powerful storytelling medium in history.</p>
+        <div class="pull-quote">
+          <p>"Cinema is a mirror by which we often see ourselves." — Martin Scorsese</p>
+        </div>
+        <p>In just 130 years, film evolved from silent black-and-white shorts to immersive 4K spectacles with AI-generated environments. Each decade brought new technology — sound, colour, widescreen, CGI — each expanding what a story could be.</p>
+        <ul class="feat-list">
+          <li><span class="feat-icon">STU</span> The studio system created Hollywood's global cultural dominance</li>
+          <li><span class="feat-icon">COL</span> Technicolor transformed how audiences experienced the world on screen</li>
+          <li><span class="feat-icon">DIG</span> Digital filmmaking put professional tools in anyone's hands</li>
+        </ul>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/cinema-audience-1950s.jpg" alt="1950s cinema audience">
+        <span class="intro-badge">Since 1895</span>
+      </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="s-dark" id="timeline">
+      <div class="section-center reveal">
+        <span class="section-label">Chronology</span>
+        <h2 class="display-heading">Iconic Eras of <span class="glow-red">Film</span></h2>
+      </div>
+
+      <div class="pg-timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Silent Era</span>
+              <h3>The First Films</h3>
+              <p>From 1895 to the late 1920s, cinema spoke without words. Chaplin, Keaton, and Lang created visual languages that still define filmmaking — storytelling through light, shadow, and motion.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">SIL</div>
+            <span class="tl-year">1895–1927</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">GLD</div>
+            <span class="tl-year">1920s–1940s</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Golden Age</span>
+              <h3>Hollywood's Golden Age</h3>
+              <p>The studio system ruled. MGM, Warner Bros., and Paramount produced hundreds of films a year, creating the celebrity culture and genre storytelling that still shapes entertainment today.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Colour &amp; Widescreen</span>
+              <h3>Technicolor Revolution</h3>
+              <p>The 1950s explosion of Technicolor and CinemaScope gave cinema a spectacle television couldn't match. Ben-Hur, Singin' in the Rain, and The Wizard of Oz became enduring cultural monuments.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">COL</div>
+            <span class="tl-year">1950s–1960s</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">BLK</div>
+            <span class="tl-year">1970s–1990s</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Blockbuster Era</span>
+              <h3>Rise of the Blockbuster</h3>
+              <p>Spielberg's Jaws invented the summer blockbuster. Star Wars redefined franchise filmmaking. The VHS revolution put movies in homes — creating an entirely new relationship between audience and film.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Digital &amp; CGI</span>
+              <h3>The Digital Age</h3>
+              <p>From Jurassic Park's CGI dinosaurs to Avatar's motion-capture worlds, digital technology shattered the limits of visual storytelling. Today, AI tools are writing scripts, generating scenes, and blurring the line between real and synthetic cinema.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">CGI</div>
+            <span class="tl-year">2000s–Present</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Evolution Through <span class="glow-red">the Lens</span></h2>
+      </div>
+      <div class="cards-grid-3">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/cinema.jpg" alt="Birth of cinema">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">FIL</span>
+            <h3>The Birth of Cinema</h3>
+            <p>The Lumière brothers' first public screening in Paris, 1895 — marking the dawn of film and inspiring generations of visual storytellers.</p>
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/very-short-history-of-cinema" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/cinema-audience-1950s.jpg" alt="Projection technology history">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">PRJ</span>
+            <h3>Projection Technology</h3>
+            <p>Optical printers, advanced reels, and the evolution of the projector — how the machinery of cinema turned theatres into cultural landmarks.</p>
+            <a href="https://lightform.com/blog/the-history-of-projection-technology" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/classic-theatre-screen.jpg" alt="Cinema as art and business">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">IND</span>
+            <h3>Cinema as Art &amp; Business</h3>
+            <p>By 1915, film had matured into both a creative medium and a global industry — the foundation of today's entertainment economy.</p>
+            <a href="https://www.theguardian.com/film/2015/aug/24/why-cinema-came-of-age-100-years-ago" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/cinema.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">Cinema is the most beautiful fraud in the world.</p>
+        <span class="quote-attr">— Jean-Luc Godard</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="early-entertainment.html" class="btn-outline">← Early Entertainment</a>
+      <a href="index.html" class="btn-outline">Home</a>
+      <a href="television-revolution.html" class="btn-red">Television Revolution →</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Film strip frames
+    const strip = document.getElementById('filmStrip');
+    for (let i = 0; i < 40; i++) {
+      const f = document.createElement('div');
+      f.className = 'film-frame';
+      strip.appendChild(f);
+    }
+
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 16; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 4 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*9+6}s;--dl:-${Math.random()*18}s;opacity:${Math.random()*0.35+0.15}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.tl-item.reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + 's'; });
+    document.querySelectorAll('.cards-grid-3 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

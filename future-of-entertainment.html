@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future of Entertainment | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Orbiting rings decoration */
+    .orbit-wrap {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 280px;
+      height: 280px;
+      pointer-events: none;
+    }
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(229,9,20,0.35);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .orbit-ring:nth-child(1) {
+      width: 120px; height: 120px;
+      animation: orbitSpin 8s linear infinite;
+      box-shadow: 0 0 20px rgba(229,9,20,0.15);
+    }
+    .orbit-ring:nth-child(2) {
+      width: 190px; height: 190px;
+      animation: orbitSpin 14s linear infinite reverse;
+      border-color: rgba(229,9,20,0.2);
+    }
+    .orbit-ring:nth-child(3) {
+      width: 260px; height: 260px;
+      animation: orbitSpin 20s linear infinite;
+      border-color: rgba(229,9,20,0.1);
+    }
+    .orbit-dot {
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 12px rgba(229,9,20,0.8);
+      top: -4px;
+      left: calc(50% - 4px);
+    }
+    @keyframes orbitSpin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Innovation tiles */
+    .innovation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+    .innov-tile {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+    .innov-tile:hover {
+      background: rgba(229,9,20,0.06);
+      border-color: rgba(229,9,20,0.3);
+      transform: translateY(-4px);
+    }
+    .innov-icon { flex-shrink: 0; margin: 0.1rem 0 0; }
+    .innov-tile h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .innov-tile p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .innovation-grid { grid-template-columns: 1fr; }
+      .orbit-wrap { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/future.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div id="heroParticles"></div>
+
+    <!-- Orbiting rings -->
+    <div class="orbit-wrap">
+      <div class="orbit-ring"><div class="orbit-dot"></div></div>
+      <div class="orbit-ring"><div class="orbit-dot"></div></div>
+      <div class="orbit-ring"><div class="orbit-dot"></div></div>
+    </div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter VII</span>
+      <h1 class="hero-title">
+        The Future of
+        <span class="red-line">Entertainment</span>
+      </h1>
+      <p class="hero-sub">AI, virtual reality, and the metaverse — where the boundary between audience and creator, real and imagined, physical and digital, dissolves entirely.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">See What's Coming</a>
+        <a href="music-and-tech.html" class="btn-outline">← Music &amp; Technology</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">Beyond the Screen</span>
+        <h2 class="display-heading">Entertainment<br><span class="glow-red">Without Limits</span></h2>
+        <p>As technology accelerates, entertainment is breaking free from flat screens. Virtual reality places audiences inside the story. Augmented reality merges fiction with the physical world. Artificial intelligence creates personalised, adaptive experiences — entertainment that knows you better than you know yourself.</p>
+        <div class="pull-quote">
+          <p>"The best way to predict the future is to invent it." — Alan Kay</p>
+        </div>
+        <p>The metaverse concept merges games, film, concerts, and social spaces into a single persistent digital reality. AI actors, procedurally generated narratives, and haptic feedback suits are transforming passive watching into active participation — the audience becomes the story.</p>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/vr1.jpg" alt="Virtual reality headset">
+        <span class="intro-badge">The Next Frontier</span>
+      </div>
+    </section>
+
+
+    <!-- INNOVATIONS -->
+    <section class="s-dark">
+      <div class="section-center reveal">
+        <span class="section-label">Emerging Tech</span>
+        <h2 class="display-heading">Technologies <span class="glow-red">Reshaping</span> Entertainment</h2>
+      </div>
+      <div class="innovation-grid">
+        <div class="innov-tile reveal">
+          <span class="innov-icon">AI</span>
+          <div>
+            <h3>AI-Generated Stories</h3>
+            <p>Large language models and diffusion AI now co-write scripts, generate characters, and produce synthetic actors — collapsing the cost of content creation to near zero.</p>
+          </div>
+        </div>
+        <div class="innov-tile reveal">
+          <span class="innov-icon">XR</span>
+          <div>
+            <h3>Virtual &amp; Augmented Reality</h3>
+            <p>VR headsets deliver presence — the illusion of actually being inside a story. AR layers digital storytelling over the real world, blurring the line between fiction and reality.</p>
+          </div>
+        </div>
+        <div class="innov-tile reveal">
+          <span class="innov-icon">META</span>
+          <div>
+            <h3>The Metaverse</h3>
+            <p>Persistent digital worlds where you attend concerts, watch films, play games, and socialise — all in a single interconnected virtual space with a real-world economy.</p>
+          </div>
+        </div>
+        <div class="innov-tile reveal">
+          <span class="innov-icon">ADP</span>
+          <div>
+            <h3>Interactive &amp; Adaptive Media</h3>
+            <p>Stories that change based on your choices, your mood, your location. Entertainment that is uniquely yours — generated in real time from your preferences and context.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore <span class="glow-red">the Future</span></h2>
+      </div>
+      <div class="cards-grid-3">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/vr1.jpg" alt="VR headset experience">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">AI</span>
+            <h3>AI &amp; Immersion</h3>
+            <p>How artificial intelligence is reshaping entertainment creation, personalisation, and the very definition of what a story can be.</p>
+            <a href="https://digitalcontentnext.org/blog/2025/01/28/how-ai-is-reshaping-the-entertainment-industry/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/hologram1.jpg" alt="Hologram interface">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">XR</span>
+            <h3>Virtual Realities</h3>
+            <p>VR and AR technologies transforming storytelling, journalism, and live performance into fully immersive participatory experiences.</p>
+            <a href="https://er.educause.edu/blogs/2018/2/vr-and-ar-the-art-of-immersive-storytelling-and-journalism" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/metaverse.jpg" alt="Virtual cityscape metaverse">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">META</span>
+            <h3>The Metaverse</h3>
+            <p>Digital worlds merging games, cinema, concerts, and social connection into one persistent, evolving virtual realm.</p>
+            <a href="https://www.meta.com/metaverse/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/future.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">Any sufficiently advanced technology is indistinguishable from magic.</p>
+        <span class="quote-attr">— Arthur C. Clarke</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="music-and-tech.html" class="btn-outline">← Music &amp; Technology</a>
+      <a href="index.html" class="btn-red">Back to Home</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 5 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*10+7}s;--dl:-${Math.random()*20}s;opacity:${Math.random()*0.4+0.15}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.innovation-grid .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + 's'; });
+    document.querySelectorAll('.cards-grid-3 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

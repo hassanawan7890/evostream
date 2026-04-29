@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .feedback-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, #0a0a0a 0%, #140404 40%, #000 100%);
+      overflow: hidden;
+      padding: 8rem 2rem 4rem;
+    }
+
+    /* Glowing radial pulse behind the form */
+    .feedback-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(229,9,20,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .feedback-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .feedback-header p {
+      color: #666;
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      line-height: 1.6;
+    }
+
+    /* Override form-wrap for this page */
+    .feedback-wrap .form-wrap {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* Rating stars (visual only) */
+    .rating-group {
+      margin-bottom: 1.5rem;
+    }
+    .rating-group label {
+      margin-bottom: 0.8rem;
+    }
+    .stars {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .star-btn {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.2s, transform 0.2s;
+      padding: 0;
+      line-height: 1;
+    }
+    .star-btn:hover,
+    .star-btn.active { color: #e50914; transform: scale(1.2); }
+
+    /* Topic pills */
+    .topic-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .pill-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Manrope', sans-serif;
+    }
+    .pill-btn:hover,
+    .pill-btn.selected {
+      background: rgba(229,9,20,0.15);
+      border-color: rgba(229,9,20,0.5);
+      color: #e50914;
+    }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .feedback-note {
+      margin-top: 0.9rem;
+      color: rgba(255,255,255,0.48);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .feedback-status {
+      min-height: 1.3rem;
+      margin-top: 1rem;
+      color: #ffbcc5;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(229,9,20,0.06);
+      border: 1px solid rgba(229,9,20,0.25);
+      border-radius: 14px;
+      margin-top: 1.5rem;
+    }
+    .success-msg h3 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .success-msg p { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <div class="feedback-hero">
+    <div id="heroParticles"></div>
+
+    <div class="feedback-wrap">
+      <div class="feedback-header reveal">
+        <span class="section-label">EvoStream · Your Voice</span>
+        <h1 class="display-heading" style="font-size:clamp(2.5rem,6vw,5rem); margin-top:0.5rem;">
+          We'd Love Your <span class="glow-red">Feedback</span>
+        </h1>
+        <p>Whether you're a movie buff, gamer, or music lover — your thoughts help us make EvoStream better for everyone.</p>
+      </div>
+
+      <div class="form-wrap reveal">
+        <form id="feedbackForm" action="mailto:hassanawan789@outlook.com" method="POST" enctype="text/plain">
+          <input type="hidden" id="feedbackRating" name="rating" value="">
+          <input type="hidden" id="feedbackTopic" name="topic" value="">
+
+          <!-- Rating -->
+          <div class="rating-group">
+            <label>How would you rate EvoStream?</label>
+            <div class="stars" id="starGroup">
+              <button type="button" class="star-btn" data-val="1">★</button>
+              <button type="button" class="star-btn" data-val="2">★</button>
+              <button type="button" class="star-btn" data-val="3">★</button>
+              <button type="button" class="star-btn" data-val="4">★</button>
+              <button type="button" class="star-btn" data-val="5">★</button>
+            </div>
+          </div>
+
+          <!-- Topic pills -->
+          <label>Which topic brought you here?</label>
+          <div class="topic-pills" id="topicPills">
+            <button type="button" class="pill-btn">Early Entertainment</button>
+            <button type="button" class="pill-btn">Cinema Age</button>
+            <button type="button" class="pill-btn">Television</button>
+            <button type="button" class="pill-btn">Gaming</button>
+            <button type="button" class="pill-btn">Digital Era</button>
+            <button type="button" class="pill-btn">Music &amp; Tech</button>
+            <button type="button" class="pill-btn">Future of Entertainment</button>
+          </div>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+          <label for="comments">Your Thoughts</label>
+          <textarea id="comments" name="comments" rows="5" placeholder="What did you love? What could be better? Any chapter you'd like us to expand?" required></textarea>
+
+          <div class="submit-row">
+            <button type="submit" class="btn-red" style="border:none; cursor:pointer; font-family:'Manrope',sans-serif;">Send Feedback →</button>
+          </div>
+          <p class="feedback-note">This opens your email app with a ready-to-send feedback draft, so it works on a free static Vercel deployment.</p>
+          <p class="feedback-status" id="feedbackStatus" aria-live="polite"></p>
+        </form>
+
+        <div class="success-msg" id="successMsg">
+          <h3>Thank you!</h3>
+          <p>Your email app should open with a pre-filled draft. Once you send it, your feedback will be on its way.</p>
+        </div>
+      </div>
+
+      <div class="pg-end-nav" style="padding-top:2rem; padding-bottom:0;">
+        <a href="index.html" class="btn-outline">← Back to Home</a>
+        <a href="citations.html" class="btn-outline">View Citations</a>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script src="feedback-widget.js" defer></script>
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 5 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*10+7}s;--dl:-${Math.random()*20}s;opacity:${Math.random()*0.4+0.1}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.15) + 's';
+      obs.observe(el);
+    });
+
+    // Header glass
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

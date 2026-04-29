@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citations | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Citations hero — no background image, just gradient */
+    .cite-hero {
+      padding: 10rem 8% 5rem;
+      background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+      border-bottom: 1px solid rgba(229,9,20,0.15);
+    }
+
+    /* Image citation grid */
+    .cite-img-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .cite-img-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .cite-img-card:hover {
+      border-color: rgba(229,9,20,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(229,9,20,0.12);
+    }
+
+    .cite-img-card a { display: block; }
+    .cite-img-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .cite-img-card:hover img { transform: scale(1.06); }
+
+    .cite-img-meta {
+      padding: 0.9rem;
+    }
+    .cite-img-meta p {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    .cite-img-meta em { color: #999; font-style: italic; }
+    .cite-img-meta strong { color: var(--red); font-style: normal; }
+
+    /* Reference lists */
+    .ref-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 8% 5rem;
+    }
+
+    .ref-group {
+      margin-bottom: 3rem;
+    }
+    .ref-group-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ref-group-title h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ref-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,91,46,0.14);
+      border: 1px solid rgba(255,179,107,0.26);
+      color: #ffe8ca;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .ref-count {
+      font-size: 0.72rem;
+      background: rgba(229,9,20,0.18);
+      color: var(--red);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    .ref-list { list-style: none; }
+    .ref-list li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .ref-list li:last-child { border-bottom: none; }
+    .ref-list a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ref-list a:hover { color: var(--red); }
+    .ref-list a::before {
+      content: '→ ';
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1100px) { .cite-img-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 760px)  { .cite-img-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px)  { .cite-img-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HEADER -->
+  <div class="cite-hero">
+    <span class="section-label">EvoStream · References</span>
+    <h1 class="display-heading" style="font-size: clamp(3rem,8vw,7rem); margin-top:0.5rem;">Image <span class="glow-red">Citations</span></h1>
+    <p style="color:#666; font-size:1rem; margin-top:1rem; max-width:600px;">All images used in this project are credited below. Click any image to visit its original source.</p>
+  </div>
+
+
+  <main style="padding-top:3rem;">
+
+    <!-- IMAGE CITATIONS GRID -->
+    <section class="s-pad" style="padding-top:0;">
+      <div class="cite-img-grid">
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/vintage-camera-in-close-up-shot-13019528/" target="_blank">
+            <img src="images/home-banner.jpg" alt="Home Banner">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Devache, A.</strong> (n.d.). <em>Vintage camera in close-up shot.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://unsplash.com/photos/a-group-of-people-standing-around-a-stage-psp3LwDxmNQ" target="_blank">
+            <img src="images/p1.jpg" alt="Early Entertainment">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Nasr, H.</strong> (n.d.). <em>A group of people standing around a stage.</em> Unsplash.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stock.adobe.com/ca/search?k=%22old+film+projector%22&asset_id=1774037486" target="_blank">
+            <img src="images/cinema.jpg" alt="Cinema">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Julia.</strong> (n.d.). <em>Old film projector casting light through dust.</em> Adobe Stock.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/black-crt-tv-2251206/" target="_blank">
+            <img src="images/tv.jpg" alt="Television">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Đạt, H.</strong> (n.d.). <em>Retro black CRT TV.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://newdigitalage.co/technology/gaming-the-attention-economy-how-gaming-has-changed-entertainment-consumption-habits/" target="_blank">
+            <img src="images/gaming.jpg" alt="Gaming">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>New Digital Age.</strong> (n.d.). <em>Gaming the attention economy.</em> New Digital Age.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/futuristic-abstract-technology-background-30547594/" target="_blank">
+            <img src="images/digital.jpg" alt="Digital Era">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Pachon in Motion.</strong> (n.d.). <em>Futuristic abstract technology background.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/wooden-vinyl-record-player-11264405/" target="_blank">
+            <img src="images/music.jpg" alt="Music & Technology">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Korchagin, N.</strong> (n.d.). <em>Wooden vinyl record player.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://github.com/stacks13/InteractiveHologram?tab=readme-ov-file" target="_blank">
+            <img src="images/future.jpg" alt="Future of Entertainment">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Stacks13.</strong> (n.d.). <em>Interactive hologram project.</em> GitHub.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://newyorkimprovtheater.com/2023/09/28/the-timeless-legacy-of-ancient-greek-theater-shaping-modern-theater-and-comedy/" target="_blank">
+            <img src="images/ancient-theatre.jpg" alt="Ancient Greek Theatre">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>New York Improv Theater.</strong> (2023). <em>Timeless legacy of Ancient Greek theater.</em> New York Improv Theater.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.openculture.com/2017/01/hear-a-9000-year-old-flute-the-worlds-oldest-playable-instrument-get-played-again.html" target="_blank">
+            <img src="images/old-instruments.jpg" alt="Ancient Instruments">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Open Culture.</strong> (2017). <em>Hear a 9,000-year-old flute.</em> Open Culture.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://merryfarmer.wordpress.com/2012/04/02/medieval-monday-storytellers/" target="_blank">
+            <img src="images/storyteller.jpg" alt="Storyteller">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Farmer, M.</strong> (2012). <em>Medieval Monday: Storytellers.</em> Merry Farmer Blog.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/people-sitting-on-red-chairs-7991240/" target="_blank">
+            <img src="images/cinema-audience-1950s.jpg" alt="Cinema Audience">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Miroshnichenko, T.</strong> (n.d.). <em>People sitting on red chairs.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/very-short-history-of-cinema" target="_blank">
+            <img src="images/classic-theatre-screen.jpg" alt="Classic Theatre Screen">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>National Science and Media Museum.</strong> (n.d.). <em>A very short history of cinema.</em> Bradford, UK.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/crop-man-switching-channels-on-retro-tv-in-park-5721876/" target="_blank">
+            <img src="images/vintage-tv.jpg" alt="Vintage TV">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>Lusina, A.</strong> (n.d.). <em>Crop man switching channels on retro TV in park.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://www.pexels.com/photo/a-father-and-boy-watching-on-the-tv-6557551/" target="_blank">
+            <img src="images/family-tv.jpg" alt="Family TV">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>cottonbro studio.</strong> (n.d.). <em>A Father and Boy Watching on the TV.</em> Pexels.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/controllers-collection-display_1154136_857005" target="_blank">
+            <img src="images/controller.jpg" alt="Controllers">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Controllers collection display.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/virtual-reality-experience_1076259_1084806" target="_blank">
+            <img src="images/vrgaming.jpg" alt="VR Gaming">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Virtual reality experience.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/vintage-record-player_1062718_1116822" target="_blank">
+            <img src="images/music1.jpg" alt="Vintage Record Player">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Vintage record player.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/professional-podcast-studio_3415158_1713318" target="_blank">
+            <img src="images/music2.jpg" alt="Studio Microphone">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Professional podcast studio.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/music-meets-technology_1937239_1282137" target="_blank">
+            <img src="images/music3.jpg" alt="Music Streaming">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Music meets technology.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/virtual-reality-exploration_498897_315380/" target="_blank">
+            <img src="images/vr1.jpg" alt="VR Headset">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Virtual reality exploration.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/futuristic-interface-interaction_111795_7295/" target="_blank">
+            <img src="images/hologram1.jpg" alt="Hologram">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Futuristic interface interaction.</em> StockCake.</p>
+          </div>
+        </div>
+
+        <div class="cite-img-card reveal">
+          <a href="https://stockcake.com/i/digital-world-silhouettes_288530_58404/" target="_blank">
+            <img src="images/metaverse.jpg" alt="Metaverse">
+          </a>
+          <div class="cite-img-meta">
+            <p><strong>StockCake.</strong> (n.d.). <em>Digital world silhouettes.</em> StockCake.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- REFERENCE LINKS -->
+    <div class="ref-section">
+      <div style="margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(229,9,20,0.2);">
+        <span class="section-label">Informational Sources</span>
+        <h2 class="display-heading" style="margin-top:0.3rem;">Educational <span class="glow-red">References</span></h2>
+        <p style="color:#666; margin-top:0.8rem; font-size:0.95rem;">Verified sources referenced throughout EvoStream's pages.</p>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH I</span>
+          <h3>Early Entertainment</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://newyorkimprovtheater.com/2023/09/28/the-timeless-legacy-of-ancient-greek-theater-shaping-modern-theater-and-comedy/" target="_blank">The Timeless Legacy of Ancient Greek Theater — New York Improv Theater</a></li>
+          <li><a href="https://www.openculture.com/2017/01/hear-a-9000-year-old-flute-the-worlds-oldest-playable-instrument-get-played-again.html" target="_blank">Hear a 9,000-Year-Old Flute — Open Culture</a></li>
+          <li><a href="https://merryfarmer.wordpress.com/2012/04/02/medieval-monday-storytellers/" target="_blank">Medieval Monday: Storytellers — Merry Farmer Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH II</span>
+          <h3>Cinema Age</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/very-short-history-of-cinema" target="_blank">A Very Short History of Cinema — Science &amp; Media Museum</a></li>
+          <li><a href="https://lightform.com/blog/the-history-of-projection-technology" target="_blank">The History of Projection Technology — Lightform Blog</a></li>
+          <li><a href="https://www.theguardian.com/film/2015/aug/24/why-cinema-came-of-age-100-years-ago" target="_blank">Why Cinema Came of Age 100 Years Ago — The Guardian</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH III</span>
+          <h3>Television Revolution</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://blog.scienceandmediamuseum.org.uk/history-of-british-television-timeline/" target="_blank">The History of British Television — Science &amp; Media Museum</a></li>
+          <li><a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/history-colour-tv-uk" target="_blank">The History of Colour TV in the UK — Science &amp; Media Museum</a></li>
+          <li><a href="https://www.britannica.com/topic/television-technology/The-impact-of-television-on-society" target="_blank">The Impact of Television on Society — Encyclopaedia Britannica</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH IV</span>
+          <h3>Gaming Evolution</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://www.arcadeshmarcade.com/post/the-rise-and-fall-of-arcades-exploring-their-origins-and-cultural-impact" target="_blank">The Rise and Fall of Arcades — Arcade Shmarcade</a></li>
+          <li><a href="https://nerdist.com/article/history-of-video-game-controllers/" target="_blank">History of Video Game Controllers — Nerdist</a></li>
+          <li><a href="https://www.picoxr.com/global/blog/future-of-virtual-reality-games" target="_blank">The Future of Virtual Reality Games — PicoXR Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH V</span>
+          <h3>Digital Era</h3>
+          <span class="ref-count">4 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://www.sunrisegeek.com/post/revolutionizing-entertainment-how-netflix-changed-the-game" target="_blank">Revolutionizing Entertainment: How Netflix Changed the Game — Sunrise Geek</a></li>
+          <li><a href="https://influencermarketinghub.com/youtube-20-years-creator-economy-marketing-impact/" target="_blank">YouTube at 20: The Creator Economy's Impact — Influencer Marketing Hub</a></li>
+          <li><a href="https://www.vplayed.com/blog/ott-tv-box/" target="_blank">What Is an OTT TV Box — VPlayed</a></li>
+          <li><a href="https://massmediandculture.com/why-watch-people-react-to-videos/" target="_blank">Why Watch People React to Videos — Mass Media &amp; Culture</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH VI</span>
+          <h3>Music &amp; Technology</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://www.volocars.com/blog/history-of-music-machines" target="_blank">The History of Music Machines — Volo Cars Blog</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/History_of_sound_recording" target="_blank">History of Sound Recording — Wikipedia</a></li>
+          <li><a href="https://medium.com/@filipe.batista/the-evolution-of-music-discovery-from-mixtapes-to-algorithms-after-a-long-silence-im-back-to-85a2a1c03280" target="_blank">The Evolution of Music Discovery — Medium (Filipe Batista)</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">
+          <span class="ref-chip">CH VII</span>
+          <h3>Future of Entertainment</h3>
+          <span class="ref-count">3 sources</span>
+        </div>
+        <ul class="ref-list">
+          <li><a href="https://digitalcontentnext.org/blog/2025/01/28/how-ai-is-reshaping-the-entertainment-industry/" target="_blank">How AI Is Reshaping the Entertainment Industry — Digital Content Next</a></li>
+          <li><a href="https://er.educause.edu/blogs/2018/2/vr-and-ar-the-art-of-immersive-storytelling-and-journalism" target="_blank">VR and AR: The Art of Immersive Storytelling — Educause Review</a></li>
+          <li><a href="https://www.meta.com/metaverse/" target="_blank">The Metaverse — Meta</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="pg-end-nav">
+      <a href="index.html" class="btn-red">← Back to Home</a>
+      <a href="feedback.html" class="btn-outline">Give Feedback</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.04) + 's';
+      obs.observe(el);
+    });
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

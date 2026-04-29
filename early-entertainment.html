@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Entertainment | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mask-deco {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(5rem, 12vw, 8rem);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      opacity: 0.2;
+      animation: maskPulse 4s ease-in-out infinite;
+      pointer-events: none;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 204, 147, 0.28);
+      filter: drop-shadow(0 0 40px rgba(255,91,46,0.35));
+      user-select: none;
+    }
+    @keyframes maskPulse {
+      0%,100% { opacity: 0.08; transform: translateY(-50%) scale(1); }
+      50%      { opacity: 0.18; transform: translateY(-50%) scale(1.06); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/p1.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="mask-deco">STAGE</div>
+    <div id="heroParticles"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter I</span>
+      <h1 class="hero-title">
+        Early
+        <span class="red-line">Entertainment</span>
+      </h1>
+      <p class="hero-sub">Where art and imagination first found a stage — ancient theatres, sacred music, and timeless stories passed mouth to ear across generations.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">Explore Origins</a>
+        <a href="index.html" class="btn-outline">← Home</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">The Beginning</span>
+        <h2 class="display-heading">Before Screens,<br><span class="glow-red">There Was Story</span></h2>
+        <p>Long before screens and speakers, people found joy through performance, song, and narrative. Ancient Greek theatre, Roman amphitheatres, and Indian dance dramas turned creativity into shared cultural experience — teaching values, celebrating gods, and binding communities.</p>
+        <div class="pull-quote">
+          <p>"Art is not what you see, but what you make others see." — Edgar Degas</p>
+        </div>
+        <p>Music and poetry were the original entertainment technology — using rhythm and melody to carry stories across generations without a single word written down. From the lyre to the drum, early entertainment was always a community affair.</p>
+        <ul class="feat-list">
+          <li><span class="feat-icon">DRA</span> Greek and Roman theatre shaped the foundations of drama and comedy</li>
+          <li><span class="feat-icon">MUS</span> Music and rhythm carried culture across continents and centuries</li>
+          <li><span class="feat-icon">ORL</span> Oral storytelling preserved history, myth, and moral wisdom</li>
+        </ul>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/ancient-theatre.jpg" alt="Ancient Greek Theatre">
+        <span class="intro-badge">Since 5th Century BC</span>
+      </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="s-dark" id="timeline">
+      <div class="section-center reveal">
+        <span class="section-label">Origins</span>
+        <h2 class="display-heading">Forms of Early <span class="glow-red">Expression</span></h2>
+      </div>
+
+      <div class="pg-timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Performance</span>
+              <h3>Greek Theatre</h3>
+              <p>From the 5th century BC, open-air amphitheatres hosted tragedies and comedies that explored the full range of human emotion. Masks, chorus, and choreography created a total theatrical experience.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">GRK</div>
+            <span class="tl-year">500 BC</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">LYR</div>
+            <span class="tl-year">3000 BC+</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Music</span>
+              <h3>Ancient Instruments</h3>
+              <p>The world's earliest playable instruments — bone flutes dating back 9,000 years — reveal that music predates writing itself. Harps, lyres, and drums were central to ritual and celebration across every culture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Storytelling</span>
+              <h3>Oral Traditions</h3>
+              <p>Before literacy, professional storytellers preserved history, law, and myth through memorised narratives. Medieval bards and griots carried entire cultural libraries in their minds — passed on through apprenticeship.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">ORL</div>
+            <span class="tl-year">Medieval</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">LIVE</div>
+            <span class="tl-year">1400s–1600s</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Live Performance</span>
+              <h3>Travelling Performers</h3>
+              <p>Jesters, acrobats, puppeteers, and travelling troupes brought entertainment to towns and courts across Europe and Asia. Shakespeare's Globe Theatre emerged from this rich live-performance tradition.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore the <span class="glow-red">Early Stages</span></h2>
+      </div>
+      <div class="cards-grid-3">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/ancient-theatre.jpg" alt="Ancient Greek Theatre">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">GRK</span>
+            <h3>Ancient Greek Theatre</h3>
+            <p>How Greek drama blended philosophy, music, and spectacle in open-air amphitheatres — shaping comedy and tragedy for all time.</p>
+            <a href="https://newyorkimprovtheater.com/2023/09/28/the-timeless-legacy-of-ancient-greek-theater-shaping-modern-theater-and-comedy/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/old-instruments.jpg" alt="Ancient Musical Instruments">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">MUS</span>
+            <h3>Early Musical Instruments</h3>
+            <p>Discover the world's oldest playable instruments — 9,000-year-old flutes that prove music's power is as ancient as humanity itself.</p>
+            <a href="https://www.openculture.com/2017/01/hear-a-9000-year-old-flute-the-worlds-oldest-playable-instrument-get-played-again.html" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/storyteller.jpg" alt="Storytelling Traditions">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">TALE</span>
+            <h3>Storytelling Traditions</h3>
+            <p>How medieval storytellers preserved culture and morality through spoken tales — the original content creators, performing to packed village squares.</p>
+            <a href="https://merryfarmer.wordpress.com/2012/04/02/medieval-monday-storytellers/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/p1.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">Stories are the creative conversion of life itself into a more powerful, clearer, more meaningful experience.</p>
+        <span class="quote-attr">— Robert McKee</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="index.html" class="btn-outline">← Home</a>
+      <a href="cinema-age.html" class="btn-red">Cinema Age →</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 5 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*10+6}s;--dl:-${Math.random()*18}s;opacity:${Math.random()*0.4+0.15}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+      obs.observe(el);
+    });
+    document.querySelectorAll('.tl-item.reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + 's'; });
+    document.querySelectorAll('.cards-grid-3 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    // Header glass
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

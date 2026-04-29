@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Digital Era | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Platform showcase */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+    }
+    .platform-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .platform-card:hover {
+      background: rgba(229,9,20,0.06);
+      border-color: rgba(229,9,20,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(229,9,20,0.15);
+    }
+    .platform-icon { margin: 0 auto 1rem; }
+    .platform-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      color: #fff;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .platform-desc {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 960px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .platform-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/digital.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div id="heroParticles"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter V</span>
+      <h1 class="hero-title">
+        The Digital
+        <span class="red-line">Era</span>
+      </h1>
+      <p class="hero-sub">From physical media to infinite streams — how the internet dismantled the gatekeepers and handed a global stage to anyone with a camera and a story.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">Explore the Digital Age</a>
+        <a href="gaming-evolution.html" class="btn-outline">← Gaming Evolution</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- STATS -->
+    <section class="stats-band">
+      <div class="stats-grid-4">
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="270">0</span><span class="stat-sfx">M+</span></span>
+          <p class="stat-lbl">Netflix subscribers worldwide</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="500">0</span><span class="stat-sfx">h</span></span>
+          <p class="stat-lbl">Hours of video uploaded to YouTube every minute</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="2005">0</span></span>
+          <p class="stat-lbl">Year YouTube launched and changed everything</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="5">0</span><span class="stat-sfx">B+</span></span>
+          <p class="stat-lbl">Internet users globally in 2024</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">The Age of Connectivity</span>
+        <h2 class="display-heading">Anyone Can<br><span class="glow-red">Broadcast Now</span></h2>
+        <p>The 2000s marked a seismic shift from physical to digital. DVDs gave way to downloads, then to streaming. YouTube, Netflix, and Twitch redefined how people consumed entertainment — instantly, anywhere, on any device.</p>
+        <div class="pull-quote">
+          <p>"The internet is the largest experiment in anarchy that we have ever had." — Eric Schmidt</p>
+        </div>
+        <p>Social media blurred the line between creator and audience. Anyone could now broadcast to millions. The digital era democratised creativity — giving rise to influencers, indie studios, podcasters, and interactive storytelling formats that no network executive could have imagined.</p>
+        <ul class="feat-list">
+          <li><span class="feat-icon">OTT</span> Netflix turned binge-watching into a cultural norm</li>
+          <li><span class="feat-icon">VID</span> YouTube created the first generation of self-made media stars</li>
+          <li><span class="feat-icon">LIVE</span> Twitch made watching others play games a mainstream entertainment category</li>
+          <li><span class="feat-icon">AUD</span> Spotify rewrote the economics of the entire music industry</li>
+        </ul>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/digital1.jpg" alt="Streaming interface">
+        <span class="intro-badge">Since 2000s</span>
+      </div>
+    </section>
+
+
+    <!-- PLATFORM SHOWCASE -->
+    <section class="s-dark">
+      <div class="section-center reveal">
+        <span class="section-label">The Platforms</span>
+        <h2 class="display-heading">Key <span class="glow-red">Digital Platforms</span></h2>
+      </div>
+      <div class="platform-grid">
+        <div class="platform-card reveal">
+          <span class="platform-icon">OTT</span>
+          <span class="platform-name">Netflix</span>
+          <p class="platform-desc">Turned physical DVD rental into a streaming empire — then became the world's largest film and TV producer.</p>
+        </div>
+        <div class="platform-card reveal">
+          <span class="platform-icon">VID</span>
+          <span class="platform-name">YouTube</span>
+          <p class="platform-desc">2.7 billion monthly users. The world's second-largest search engine and the birthplace of the creator economy.</p>
+        </div>
+        <div class="platform-card reveal">
+          <span class="platform-icon">LIVE</span>
+          <span class="platform-name">Twitch</span>
+          <p class="platform-desc">Live entertainment through gaming — turning strangers into communities around shared real-time play.</p>
+        </div>
+        <div class="platform-card reveal">
+          <span class="platform-icon">AUD</span>
+          <span class="platform-name">Spotify</span>
+          <p class="platform-desc">600M+ listeners. Algorithmic playlists replaced radio DJs and transformed how the world discovers music.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore <span class="glow-red">the Digital World</span></h2>
+      </div>
+      <div class="cards-grid-2" style="max-width:860px;">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/digital1.jpg" alt="Streaming revolution">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">STR</span>
+            <h3>The Streaming Revolution</h3>
+            <p>How Netflix transformed global media consumption and forever changed the relationship between audience and content.</p>
+            <a href="https://www.sunrisegeek.com/post/revolutionizing-entertainment-how-netflix-changed-the-game" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/digital2.jpg" alt="Creator economy">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">CRE</span>
+            <h3>The Creator Economy</h3>
+            <p>How YouTube empowered millions of creators and built an entirely new entertainment ecosystem outside traditional media.</p>
+            <a href="https://influencermarketinghub.com/youtube-20-years-creator-economy-marketing-impact/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/digital.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">The internet didn't kill traditional media — it handed everyone a microphone.</p>
+        <span class="quote-attr">— Anonymous, Digital Era</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="gaming-evolution.html" class="btn-outline">← Gaming Evolution</a>
+      <a href="index.html" class="btn-outline">Home</a>
+      <a href="music-and-tech.html" class="btn-red">Music &amp; Technology →</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 4 + 2;
+      p.style.cssText = `position:absolute;width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*9+6}s;--dl:-${Math.random()*18}s;opacity:${Math.random()*0.35+0.15}`;
+      hp.appendChild(p);
+    }
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.stats-grid-4 .reveal, .platform-grid .reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.1) + 's';
+    });
+    document.querySelectorAll('.cards-grid-2 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    // Counter
+    const cObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target, target = parseInt(el.dataset.count, 10);
+        if (!target) return;
+        const dur = target > 999 ? 2000 : 1400, start = performance.now();
+        const tick = now => {
+          const p = Math.min((now - start) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(ease * target).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick); else el.textContent = target.toLocaleString();
+        };
+        requestAnimationFrame(tick);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => cObs.observe(el));
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

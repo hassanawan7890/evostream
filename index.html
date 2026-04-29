@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Evolution of Entertainment | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Home hero ── */
+    .home-hero-bg { background-image: url('images/home-banner.jpg'); }
+
+    /* ── Chapter cards ── */
+    .chapters-section { padding: 5rem 5% 6rem; }
+
+    .home-chapters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 380px;
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .home-chapters .ch-card:last-child {
+      grid-column: span 3;
+      grid-row: auto;
+    }
+
+    .ch-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .ch-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(229,9,20,0.25);
+    }
+
+    .ch-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s ease;
+    }
+    .ch-card:hover .ch-bg { transform: scale(1.08); }
+
+    .ch-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.45) 55%,
+        transparent 100%
+      );
+    }
+
+    .ch-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem;
+      transform: translateY(12px);
+      transition: transform 0.4s ease;
+    }
+    .ch-card:hover .ch-body { transform: translateY(0); }
+
+    .ch-num {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(229,9,20,0.15);
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.6rem;
+    }
+
+    .ch-body h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .ch-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .ch-card:hover .ch-body p { opacity: 1; }
+
+    .ch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(229,9,20,0.5);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s, gap 0.3s;
+    }
+    .ch-link:hover { color: var(--red); border-color: var(--red); gap: 0.8rem; }
+
+    /* ── Home intro strip ── */
+    .home-intro {
+      text-align: center;
+      padding: 5rem 8% 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .home-intro p {
+      color: #777;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 1.2rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .home-chapters { grid-template-columns: repeat(2, 1fr); }
+      .home-chapters .ch-card:last-child { grid-column: span 2; }
+    }
+    @media (max-width: 580px) {
+      .home-chapters { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+      .home-chapters .ch-card:last-child { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg home-hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Entertainment History</span>
+      <h1 class="hero-title">
+        The Evolution
+        <span class="red-line">Of Entertainment</span>
+      </h1>
+      <p class="hero-sub">From ancient theatres to AI-generated worlds — explore how humanity's hunger for story shaped every era of technology and culture.</p>
+      <div class="hero-ctas">
+        <a href="early-entertainment.html" class="btn-red">Start Exploring</a>
+        <a href="#chapters" class="btn-outline">View All Chapters ↓</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+    <div class="home-intro reveal">
+      <span class="section-label">Seven Chapters</span>
+      <h2 class="display-heading">A Journey Through <span class="glow-red">Time</span></h2>
+      <p>Entertainment has evolved alongside every human breakthrough — from the lyre to the algorithm. Each chapter below traces a pivotal era, revealing how creativity and technology have always pushed each other forward.</p>
+    </div>
+
+
+    <!-- CHAPTER CARDS -->
+    <section class="chapters-section" id="chapters">
+      <div class="home-chapters">
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/p1.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter I</span>
+            <h2>Early Entertainment</h2>
+            <p>Where art and imagination began — ancient theatre, music, and storytelling that shaped culture and human connection.</p>
+            <a href="early-entertainment.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/cinema.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter II</span>
+            <h2>Cinema Age</h2>
+            <p>Where imagination met light — from the Lumière brothers' first reel to Hollywood's golden age and the CGI era.</p>
+            <a href="cinema-age.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/tv.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter III</span>
+            <h2>Television Revolution</h2>
+            <p>The box that brought the world into the living room — connecting billions through shared broadcast moments.</p>
+            <a href="television-revolution.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/gaming.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter IV</span>
+            <h2>Gaming Evolution</h2>
+            <p>From arcades to esports — how pixels became an art form, a community, and a billion-dollar global industry.</p>
+            <a href="gaming-evolution.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/digital.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter V</span>
+            <h2>Digital Era</h2>
+            <p>Streaming, social media, and the creator economy — how the internet democratised entertainment for everyone.</p>
+            <a href="digital-era.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/music.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter VI</span>
+            <h2>Music &amp; Technology</h2>
+            <p>From vinyl grooves to digital streams — how innovation transformed the way we create, share, and feel music.</p>
+            <a href="music-and-tech.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+        <!-- Featured last card -->
+        <div class="ch-card reveal">
+          <div class="ch-bg" style="background-image: url('images/future.jpg');"></div>
+          <div class="ch-grad"></div>
+          <div class="ch-body">
+            <span class="ch-num">Chapter VII</span>
+            <h2>The Future of Entertainment</h2>
+            <p>AI, VR, and the metaverse — where the boundary between audience and creator disappears entirely.</p>
+            <a href="future-of-entertainment.html" class="ch-link">Explore Chapter →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BOTTOM NAV -->
+    <div class="pg-end-nav">
+      <a href="early-entertainment.html" class="btn-red">Begin with Chapter I →</a>
+      <a href="citations.html" class="btn-outline">View Citations</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Particles
+    const hp = document.getElementById('heroParticles');
+    for (let i = 0; i < 22; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const s = Math.random() * 5 + 3;
+      p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;--dur:${Math.random()*10+7}s;--dl:-${Math.random()*20}s;opacity:${Math.random()*0.5+0.2}`;
+      hp.appendChild(p);
+    }
+
+    // Shared reveal + stagger
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+      obs.observe(el);
+    });
+
+    // Header glass
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>

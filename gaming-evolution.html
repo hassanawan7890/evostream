@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gaming Evolution | EvoStream</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Pixel grid decoration */
+    .pixel-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(229,9,20,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229,9,20,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Floating pixel blocks */
+    .pixel-block {
+      position: absolute;
+      background: var(--red);
+      animation: pixelFloat var(--dur,6s) var(--dl,0s) ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes pixelFloat {
+      from { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      to   { transform: translateY(-30px) rotate(45deg); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
+    <nav class="nav-menu">
+      <div class="menu-group">
+        <div class="menu-icon">☰</div>
+        <ul class="dropdown">
+          <li><a href="early-entertainment.html">Early Entertainment</a></li>
+          <li><a href="cinema-age.html">Cinema Age</a></li>
+          <li><a href="television-revolution.html">Television Revolution</a></li>
+          <li><a href="gaming-evolution.html">Gaming Evolution</a></li>
+          <li><a href="digital-era.html">Digital Era</a></li>
+          <li><a href="music-and-tech.html">Music &amp; Technology</a></li>
+          <li><a href="future-of-entertainment.html">Future of Entertainment</a></li>
+          <li><a href="citations.html">Citations</a></li>
+        </ul>
+      </div>
+      <a href="feedback.html" class="nav-feedback">Feedback</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('images/gaming.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="pixel-grid"></div>
+    <div id="pixelBlocks"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-eyebrow">EvoStream · Chapter IV</span>
+      <h1 class="hero-title">
+        The Gaming
+        <span class="red-line">Revolution</span>
+      </h1>
+      <p class="hero-sub">From coin-operated Pac-Man machines to billion-dollar esports arenas — how pixels became the defining art form and community of the digital age.</p>
+      <div class="hero-ctas">
+        <a href="#intro" class="btn-red">Level Up</a>
+        <a href="television-revolution.html" class="btn-outline">← Television Revolution</a>
+      </div>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- STATS -->
+    <section class="stats-band">
+      <div class="stats-grid-4">
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="3">0</span><span class="stat-sfx">B+</span></span>
+          <p class="stat-lbl">Gamers worldwide in 2024</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="184">0</span><span class="stat-sfx">B</span></span>
+          <p class="stat-lbl">Global gaming revenue (USD) in 2023</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="1972">0</span></span>
+          <p class="stat-lbl">Year Pong launched the home gaming era</p>
+        </div>
+        <div class="stat-box reveal">
+          <span class="stat-num"><span data-count="40">0</span><span class="stat-sfx">%</span></span>
+          <p class="stat-lbl">Of gamers are women globally</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="two-col" id="intro">
+      <div class="body-text reveal">
+        <span class="section-label">Pixels, Power &amp; Play</span>
+        <h2 class="display-heading">From Arcade<br><span class="glow-red">To Metaverse</span></h2>
+        <p>Video games evolved from simple 8-bit challenges into immersive, narratively rich worlds. Arcade machines brought people together in physical spaces. Consoles like the NES, PlayStation, and Xbox defined entire generations. Online gaming created global communities that transcend geography.</p>
+        <div class="pull-quote">
+          <p>"Video games are bad for you? That's what they said about rock and roll." — Shigeru Miyamoto</p>
+        </div>
+        <p>Today, gaming isn't just a hobby — it's a career, a cultural identity, and the world's largest entertainment industry by revenue. Esports fills stadiums; streamers command audiences larger than cable news.</p>
+        <ul class="feat-list">
+          <li><span class="feat-icon">ARC</span> Arcades of the 1980s turned gaming into a social spectator sport</li>
+          <li><span class="feat-icon">CON</span> Console wars of the 1990s drove innovation at a blistering pace</li>
+          <li><span class="feat-icon">NET</span> Online multiplayer created permanent global gaming communities</li>
+          <li><span class="feat-icon">ESP</span> Esports now rivals traditional sports in viewership and prize money</li>
+        </ul>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="images/controller.jpg" alt="Gaming controllers through the ages">
+        <span class="intro-badge">Since 1972</span>
+      </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="s-dark" id="timeline">
+      <div class="section-center reveal">
+        <span class="section-label">Eras</span>
+        <h2 class="display-heading">The Gaming <span class="glow-red">Eras</span></h2>
+      </div>
+
+      <div class="pg-timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Arcade</span>
+              <h3>The Arcade Boom</h3>
+              <p>Pong (1972), Space Invaders (1978), Pac-Man (1980) — arcade cabinets transformed diners, cinemas, and malls into social gaming arenas. Quarters fuelled a billion-dollar cultural revolution.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">ARC</div>
+            <span class="tl-year">1972–1985</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">CON</div>
+            <span class="tl-year">1985–2000</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Console Wars</span>
+              <h3>The Console Era</h3>
+              <p>Nintendo vs. Sega. PlayStation vs. N64. The console wars drove hardware and software innovation at a pace that outstripped every other consumer technology sector. Mario, Sonic, and Link became global icons.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-tag">Online</span>
+              <h3>The Internet Changes Everything</h3>
+              <p>World of Warcraft hit 12 million subscribers. Counter-Strike built the foundations of esports. Broadband internet meant gaming was no longer a solo or local activity — it became a global sport.</p>
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-dot">MMO</div>
+            <span class="tl-year">2000s</span>
+          </div>
+          <div class="tl-blank"></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-blank"></div>
+          <div class="tl-center">
+            <div class="tl-dot">VR</div>
+            <span class="tl-year">2010s–Present</span>
+          </div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-tag">Esports &amp; VR</span>
+              <h3>Esports, Streaming &amp; Beyond</h3>
+              <p>League of Legends tournaments fill 40,000-seat arenas. Twitch streams attract larger audiences than cable TV. VR headsets dissolve the boundary between player and game world — the final frontier.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="s-pad">
+      <div class="section-center reveal">
+        <span class="section-label">Deep Dives</span>
+        <h2 class="display-heading">Explore the <span class="glow-red">Evolution</span></h2>
+      </div>
+      <div class="cards-grid-3">
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/arcade.jpg" alt="Arcade machines">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">ARC</span>
+            <h3>The Arcade Era</h3>
+            <p>Pac-Man, Space Invaders, and Donkey Kong — the 1980s arcade boom created gaming as a social and cultural phenomenon.</p>
+            <a href="https://www.arcadeshmarcade.com/post/the-rise-and-fall-of-arcades-exploring-their-origins-and-cultural-impact" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/controller.jpg" alt="Gaming controllers">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">PAD</span>
+            <h3>The Console Evolution</h3>
+            <p>From the NES d-pad to dual analogue sticks — how controllers evolved alongside gameplay to create ever-deeper player immersion.</p>
+            <a href="https://nerdist.com/article/history-of-video-game-controllers/" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+        <div class="pg-card reveal" style="height:420px;">
+          <img src="images/vrgaming.jpg" alt="VR gaming headset">
+          <div class="card-grad"></div>
+          <div class="card-body">
+            <span class="card-icon">VR</span>
+            <h3>Virtual Reality &amp; Beyond</h3>
+            <p>VR headsets, haptic feedback, and motion-tracking — redefining immersion and allowing players to step physically inside digital worlds.</p>
+            <a href="https://www.picoxr.com/global/blog/future-of-virtual-reality-games" target="_blank" class="card-cta">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote-section" style="background-image: url('images/gaming.jpg');">
+      <div class="quote-inner reveal">
+        <span class="big-q">"</span>
+        <p class="quote-text">A game is a series of interesting decisions.</p>
+        <span class="quote-attr">— Sid Meier, Creator of Civilization</span>
+      </div>
+    </section>
+
+
+    <!-- PAGE NAV -->
+    <div class="pg-end-nav">
+      <a href="television-revolution.html" class="btn-outline">← Television Revolution</a>
+      <a href="index.html" class="btn-outline">Home</a>
+      <a href="digital-era.html" class="btn-red">Digital Era →</a>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 EvoStream | Designed by Hassan Sajid</p>
+  </footer>
+
+
+  <script>
+    // Pixel blocks
+    const pb = document.getElementById('pixelBlocks');
+    for (let i = 0; i < 14; i++) {
+      const b = document.createElement('div');
+      b.className = 'pixel-block';
+      const s = Math.floor(Math.random() * 10 + 4);
+      b.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${Math.random()*4+3}s;--dl:-${Math.random()*6}s;opacity:0.2`;
+      pb.appendChild(b);
+    }
+
+    // Reveal + stagger
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.stats-grid-4 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    document.querySelectorAll('.tl-item.reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + 's'; });
+    document.querySelectorAll('.cards-grid-3 .reveal').forEach((el, i) => { el.style.transitionDelay = (i * 0.15) + 's'; });
+
+    // Counter
+    const cObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target, target = parseInt(el.dataset.count, 10);
+        if (!target) return;
+        const dur = target > 999 ? 2000 : 1400, start = performance.now();
+        const tick = now => {
+          const p = Math.min((now - start) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(ease * target).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick); else el.textContent = target.toLocaleString();
+        };
+        requestAnimationFrame(tick);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => cObs.observe(el));
+
+    const hdr = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 40;
+      hdr.style.background = s ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.85)';
+      hdr.style.backdropFilter = s ? 'blur(14px)' : 'none';
+    }, { passive: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
