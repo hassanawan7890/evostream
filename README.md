@@ -5,10 +5,10 @@ EvoStream is a static multi-page website that explores the evolution of entertai
 ## Project Link
 
 GitHub Repository:
-`https://github.com/hassanawan7890/evostream`
+[https://github.com/hassanawan7890/evostream](https://github.com/hassanawan7890/evostream)
 
 Live Demo:
-`https://evostream.vercel.app`
+[https://evostream.vercel.app](https://evostream.vercel.app)
 
 ## Tech Stack
 
