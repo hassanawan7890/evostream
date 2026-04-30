@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music & Technology | EvoStream</title>
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 
   <style>
     /* ===================================================
@@ -898,8 +899,8 @@
     <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
     <nav class="nav-menu">
       <div class="menu-group">
-        <div class="menu-icon">☰</div>
-        <ul class="dropdown">
+        <button class="menu-icon" type="button" aria-expanded="false" aria-label="Toggle site navigation" aria-controls="site-nav">&#9776;</button>
+        <ul class="dropdown" id="site-nav">
           <li><a href="early-entertainment.html">Early Entertainment</a></li>
           <li><a href="cinema-age.html">Cinema Age</a></li>
           <li><a href="television-revolution.html">Television Revolution</a></li>

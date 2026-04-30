@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feedback | EvoStream</title>
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
   <style>
     .feedback-hero {
       min-height: 100vh;
@@ -138,6 +139,29 @@
       margin-bottom: 0.5rem;
     }
     .success-msg p { color: #666; font-size: 0.9rem; }
+
+    @media (max-width: 760px) {
+      .feedback-hero { padding: 7rem 1rem 3rem; }
+      .feedback-hero::before {
+        width: 520px;
+        height: 520px;
+      }
+      .feedback-header { margin-bottom: 2rem; }
+      .submit-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .feedback-wrap { max-width: 100%; }
+      .stars { gap: 0.35rem; }
+      .star-btn { font-size: 1.6rem; }
+      .pill-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -146,8 +170,8 @@
     <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
     <nav class="nav-menu">
       <div class="menu-group">
-        <div class="menu-icon">☰</div>
-        <ul class="dropdown">
+        <button class="menu-icon" type="button" aria-expanded="false" aria-label="Toggle site navigation" aria-controls="site-nav">&#9776;</button>
+        <ul class="dropdown" id="site-nav">
           <li><a href="early-entertainment.html">Early Entertainment</a></li>
           <li><a href="cinema-age.html">Cinema Age</a></li>
           <li><a href="television-revolution.html">Television Revolution</a></li>

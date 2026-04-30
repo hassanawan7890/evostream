@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citations | EvoStream</title>
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
   <style>
     /* Citations hero — no background image, just gradient */
     .cite-hero {
@@ -125,8 +126,16 @@
     }
 
     @media (max-width: 1100px) { .cite-img-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 760px)  { .cite-img-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px)  { .cite-img-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 760px)  {
+      .cite-hero { padding: 8rem 1rem 4rem; }
+      .cite-img-grid { grid-template-columns: repeat(2, 1fr); }
+      .ref-section { padding: 0 1rem 4rem; }
+      .ref-group-title {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+    }
+    @media (max-width: 640px)  { .cite-img-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -135,8 +144,8 @@
     <div class="logo"><a href="index.html"><span class="brand-mark" aria-hidden="true">ES</span><span class="brand-name"><span>Evo</span>Stream</span></a></div>
     <nav class="nav-menu">
       <div class="menu-group">
-        <div class="menu-icon">☰</div>
-        <ul class="dropdown">
+        <button class="menu-icon" type="button" aria-expanded="false" aria-label="Toggle site navigation" aria-controls="site-nav">&#9776;</button>
+        <ul class="dropdown" id="site-nav">
           <li><a href="early-entertainment.html">Early Entertainment</a></li>
           <li><a href="cinema-age.html">Cinema Age</a></li>
           <li><a href="television-revolution.html">Television Revolution</a></li>
