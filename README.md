@@ -7,6 +7,9 @@ EvoStream is a static multi-page website that explores the evolution of entertai
 GitHub Repository:
 `https://github.com/hassanawan7890/evostream`
 
+Live Demo:
+`https://evostream.vercel.app`
+
 ## Tech Stack
 
 - HTML
@@ -20,7 +23,6 @@ GitHub Repository:
 - `feedback.html` is the feedback page
 - `feedback-widget.js` powers the interactive feedback experience
 - `images/` stores the visual assets used throughout the site
-
 ## Feedback System
 
 The feedback page uses `feedback-widget.js` to:
@@ -35,7 +37,7 @@ Current feedback destination:
 
 ## Deployment
 
-This project can be deployed for free on Vercel as a static site.
+This project is deployed on Vercel as a static site.
 
 Recommended Vercel flow:
 
