@@ -23,6 +23,7 @@ Live Demo:
 - `feedback.html` is the feedback page
 - `feedback-widget.js` powers the interactive feedback experience
 - `images/` stores the visual assets used throughout the site
+
 ## Feedback System
 
 The feedback page uses `feedback-widget.js` to:
